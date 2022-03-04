@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+         <link rel="stylesheet" href="styloA.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 class="omega" align="center"> ADMINISTRACION DE AUTORES  </h1>
+        <h2 class="omega2" align="center">Utilice este modulo para administrar la base de datos de autores.</h2>
+        <h3 class="omega3" align="center"> Cargue los siguientes datos del autor: </h3>
+        
+                <div th:if="${exito}!=null" class="cartel">
+                    <div class="cuerpo-cartel">
+                    <h5 class="cartelote">Exito</h5>
+                    <p class="cartelito" th:text="${exito}"></p>
+                </div>
+              </div>
+                <div th:if="${error}!=null" class="cartel2">
+                    <div class="cuerpo-cartel2">
+                    <h5 class="cartelote2">Error</h5>
+                    <p class="cartelito2" th:text="${error}"></p>
+                </div>
+                </div>
+        
+            <form th:action="@{/RegistroAutor}" method="POST">     
+            
+            <input class="omega4" type="text" autocomplete="off" name="nombre" placeholder="Nombre y Apellido">
+            <br>
+            <br>
+            <button id="boton1" class="boton" type="submit">Guardar</button>
+            
+             </form>   
+        
+            <a href="/">
+            <button id="boton2" class="boton" type="button" >Volver</button>
+            </a>
+    </body>
+</html>

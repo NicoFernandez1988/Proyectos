@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        
+         <link rel="stylesheet" href="styloListaA.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        
+        <h1 class="omega" align="center"> LISTADO DE AUTORES </h1>
+        
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre y Apellido</th> 
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                        
+                    </tr>
+                </thead>
+                <tbody th:each="autor : ${autores}">
+                    <tr>
+                        <th scope="row" th:text="${autor.id}"></th>
+                        <td th:text="${autor.nombre}" style="font-weight: bolder;"></td>
+                        <td> 
+                            <p th:if="${autor.alta}" th:text="Activo" class="activo" style="font-weight: bolder;"></p>
+                            <p th:unless="${autor.alta}" th:text="Inactivo" class="inactivo" style="font-weight: bolder;"></p>
+                        </td>
+                        <td>
+                            <a th:href="@{/altaAutor/__${autor.id}__}"><button id="boton1" class="boton" type="submit">Activar</button></a>
+                            <a th:href="@{/ModificarAutor/__${autor.id}__}"><button id="boton2" class="boton" type="button">Modificar</button></a> 
+                            <a th:href="@{/bajaAutor/__${autor.id}__}"><button id="boton3" class="boton" type="submit">Desactivar</button></a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <a href="/">
+            <button id="boton4" class="boton" type="button" >Volver</button>
+            </a>
+    </body>
+</html>

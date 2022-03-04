@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <link rel="stylesheet" href="styloL.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-image:url(https://media.wsimag.com/attachments/f80c8122cb20fb640a9fff2294d29e00bafb83d1/store/fill/1090/613/8d2cb3dbc6d2de994509159ac6979c02a7972dda326bbf5e88ab801a553c/Biblioteca.jpg);">
+        <h1 class="alfa" align="center" style="padding: 3;background-color: rgba(255, 166, 0, 0.828);border-style:solid;"> MODIFICACION DE LIBROS </h1>
+        <h2 class="alfa2" align="center" style="padding: 3;background-color: rgba(255, 166, 0, 0.828);border-style:solid;">Utilice este modulo para modificar la base de datos del libro.</h2>
+        <h3 class="alfa3" align="center" style="padding: 3;background-color: rgba(255, 166, 0, 0.828);border-style:solid;"> Cambie los siguientes datos del libro: </h3>
+
+        <form th:action="@{/ModificarLibro/__${libro.id}__}" method="POST">     
+            <input hidden th:value="${id}" name="id">
+            <input th:value="${libro.isbn}" class="alfa4" type="number" autocomplete="off" name="isbn" placeholder="   Isbn" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;">
+            <br>
+            <br>
+            <input th:value="${libro.titulo}" class="alfa5" type="text" autocomplete="off" name="titulo" placeholder="Titulo" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;">
+            <br>
+            <br>
+            <input th:value="${libro.anio}" class="alfa6" type="datetime" autocomplete="off" name="anio" placeholder="Año de publicacion" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;">
+            <br>
+            <br>
+            <input th:value="${libro.ejemplares}" class="alfa7" type="number" autocomplete="off" name="ejemplares" placeholder="Cantidad de ejemplares" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;">
+            <br>
+            <br>
+            <input th:value="${libro.ejemplaresPrestados}" class="alfa8" type="number" autocomplete="off" name="ejemplaresPrestados" placeholder="Ejemplares prestados" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;">
+            <br>
+            <br>
+            <input hidden th:value="${id}" name="id">
+            <label class="titulo" style="padding: 1px;position: absolute;left: 36%;margin-top: -0.3%;color:white;font-size:110%;background-color: rgb(30, 30, 30);font-weight: bolder;border-style:solid;width: 6%;text-align: center;">Autor</label>
+                <select th:value="${libro.autor.id}" class="form-control" name="idAutor" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;width: 13.5%;">
+                    <option  th:each="autor : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
+                </select>
+            
+            <br>
+            <br>
+            <input hidden th:value="${id}" name="id">
+            <label class="titulo2" style="padding: 1px;position: absolute;left: 36%;margin-top: -0.3%;color:white;font-size:110%;background-color: rgb(30, 30, 30);font-weight: bolder;border-style:solid;width: 6%;text-align: center;">Editorial</label>
+                <select th:value="${libro.editorial.id}" class="form-control" name="idEditorial" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;width: 13.5%;">
+                    <option th:each="editorial : ${editoriales}" th:value="${editorial.id}" th:text="${editorial.nombre}"></option>
+                </select>
+            
+            <br>
+            <br>
+
+            <button id="boton1" class="boton" type="submit" style="font-weight: bolder;text-align:center;width:69px;background-color: rgb(23, 207, 23);position: absolute;left: 43%;margin-top: 1%;">Guardar</button>
+            </form> 
+
+          
+        
+        <a href="/">
+            <button id="boton2" class="boton" type="button" style="font-weight: bolder;text-align:center;width:69px;background-color:rgb(235, 31, 31);position: absolute;left: 51.3%; margin-top: 1%;" >Volver</button>
+        </a>
+    </body>
+</html>

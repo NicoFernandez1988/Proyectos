@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+         <link rel="stylesheet" href="styloModificacionA.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-image:url(https://media.wsimag.com/attachments/f80c8122cb20fb640a9fff2294d29e00bafb83d1/store/fill/1090/613/8d2cb3dbc6d2de994509159ac6979c02a7972dda326bbf5e88ab801a553c/Biblioteca.jpg);">
+        <h1 class="gama" align="center" style="padding: 3;background-color: rgba(255, 166, 0, 0.828);border-style:solid;"> MODIFICACION DE AUTORES </h1>
+        <h2 class="gama2" align="center" style="padding: 3;background-color: rgba(255, 166, 0, 0.828);border-style:solid;">Utilice este modulo para modificar la base de datos del autor.</h2>
+        <h3 class="gama3" align="center" style="padding: 3;background-color: rgba(255, 166, 0, 0.828);border-style:solid;"> Cambie el nombre y apellido del autor: </h3>
+        
+                
+            <form th:action="@{/ModificarAutor/__${autor.id}__}" method="POST">     
+                <input hidden th:value="${id}" name="id">
+            <input th:value="${autor.nombre}"  class="gama4" type="text" autocomplete="off" name="nombre" placeholder="Nombre y Apellido" style="text-align: center;padding: 2px;border-style:solid;border-color: black;font-weight:bolder;margin: 0cm 15.3cm;">
+            <br>
+            <br>
+            <button id="botoncito1" class="botoncito" type="submit" style="font-weight: bolder;text-align:center;width:69px;background-color: rgb(23, 207, 23);position: absolute;left: 43%;margin-top: 1%;">Guardar</button>
+            
+             </form>   
+        
+            <a href="/">
+            <button id="botoncito2" class="botoncito" type="button" style="font-weight: bolder;text-align:center;width:69px;background-color:rgb(235, 31, 31);position: absolute;left: 51.3%; margin-top: 1%;">Volver</button>
+            </a>
+    </body>
+</html>

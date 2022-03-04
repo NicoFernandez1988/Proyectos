@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        
+         <link rel="stylesheet" href="styloListaL.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        
+        <h1 class="omega" align="center"> LISTADO DE LIBROS </h1>
+        
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Isbn</th> 
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Cantidad de ejemplares para prestar</th>
+                        <th scope="col">Ejemplares prestados</th> 
+                        <th scope="col">Ejemplares restantes/faltantes</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Editorial</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                        
+                    </tr>
+                </thead>
+                <tbody th:each="libro : ${libros}">
+                    <tr>
+                        <th scope="row" th:text="${libro.id}"></th>
+                        <td scope="row" th:text="${libro.isbn}" style="font-weight: bolder;"></td>
+                        <td th:text="${libro.titulo}" style="font-weight: bolder;"></td>
+                        <td scope="row" th:text="${libro.anio}" style="font-weight: bolder;"></td>
+                        <td scope="row" th:text="${libro.ejemplares}" style="font-weight: bolder;"></td>
+                        <td scope="row" th:text="${libro.ejemplaresPrestados}" style="font-weight: bolder;"></td>
+                        <td scope="row" th:text="${libro.ejemplaresRestantes}" style="font-weight: bolder;"></td>
+                        <td th:text="${libro.autor.nombre}" style="font-weight: bolder;"></td>
+                        <td th:text="${libro.editorial.nombre}" style="font-weight: bolder;"></td>
+                        
+                        <td> 
+                            <p th:if="${libro.alta}" th:text="Activo" class="activo" style="font-weight: bolder;"></p>
+                            <p th:unless="${libro.alta}" th:text="Inactivo" class="inactivo" style="font-weight: bolder;"></p>
+                        </td>
+                        <td>
+                            <a th:href="@{/altaLibro/__${libro.id}__}"><button id="boton1" class="boton" type="submit">Activar</button></a>
+                            <a th:href="@{/ModificarLibro/__${libro.id}__}"><button id="boton2" class="boton" type="submit">Modificar</button></a> 
+                            <a th:href="@{/bajaLibro/__${libro.id}__}"><button id="boton3" class="boton" type="submit">Desactivar</button></a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <a href="/">
+            <button id="boton4" class="boton" type="button" >Volver</button>
+            </a>
+    </body>
+</html>

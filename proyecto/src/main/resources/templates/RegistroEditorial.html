@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <link rel="stylesheet" href="styloE.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 class="alfa" align="center"> ADMINISTRACION DE EDITORIALES </h1>
+        <h2 class="alfa2" align="center">Utilice este modulo para administrar la base de datos de las editoriales.</h2>
+        <h3 class="alfa3" align="center"> Cargue el siguiente dato de la editorial: </h3>
+        
+            <div th:if="${exito}!=null" class="cartel">
+                    <div class="cuerpo-cartel">
+                    <h5 class="cartelote">Exito</h5>
+                    <p class="cartelito" th:text="${exito}"></p>
+                </div>
+              </div>
+                <div th:if="${error}!=null" class="cartel2">
+                    <div class="cuerpo-cartel2">
+                    <h5 class="cartelote2">Error</h5>
+                    <p class="cartelito2" th:text="${error}"></p>
+                </div>
+                </div>
+        
+            <form th:action="@{/RegistroEditorial}" method="POST">     
+            
+            <input class="alfa4" type="text" autocomplete="off" name="nombre" placeholder="Nombre">
+            <br>
+            <br>
+            <button id="boton1" class="boton" type="submit">Guardar</button>
+            
+
+            </form>    
+                <a href="/">
+                <button id="boton2" class="boton" type="button" >Volver</button>
+                </a>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+body{
+    background-image:url(https://media.wsimag.com/attachments/f80c8122cb20fb640a9fff2294d29e00bafb83d1/store/fill/1090/613/8d2cb3dbc6d2de994509159ac6979c02a7972dda326bbf5e88ab801a553c/Biblioteca.jpg)
+}
+
+.omega{
+    padding: 3;
+    background-color: rgba(255, 166, 0, 0.828);
+    border-style:solid;
+}
+
+
+.boton{
+    font-weight: bolder;
+    text-align:center;
+    width:79px;
+}
+
+#boton1{
+    background-color:forestgreen
+    
+}
+
+#boton2{
+    background-color:royalblue
+    
+}
+
+#boton3{
+    background-color:red
+    
+}
+
+#boton4{
+    background-color:rgb(255, 110, 0);
+    position: absolute;
+    left: 50%; 
+    margin-top: 1%;
+    
+}
+
+thead{
+    background-color:rgba(255, 90, 0, 0.8);
+    font-size:120%;
+    
+    width: 100%;
+}
+
+tr{
+   hover {background-color: yellow;}
+    nth-childeven{background-color: #f2f2f2}
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-style:solid;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+   border-bottom: 1px solid #000000;
+   border-style:solid;
+}
+
+
+
+th, td {
+  background-color: rgba(255, 166, 0, 0.828);
+  color: black;
+}
+
+.activo{
+    padding: 1px;
+    background-color: rgb(210, 210, 210);
+    border-style:solid;
+    color:green;
+}
+
+.inactivo{
+    padding: 1px;
+    background-color: rgb(60, 60, 60);
+    border-style:solid;
+    color:red;
+}

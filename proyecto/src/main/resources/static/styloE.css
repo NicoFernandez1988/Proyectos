@@ -1,0 +1,74 @@
+body{
+    background-image:url(https://media.wsimag.com/attachments/f80c8122cb20fb640a9fff2294d29e00bafb83d1/store/fill/1090/613/8d2cb3dbc6d2de994509159ac6979c02a7972dda326bbf5e88ab801a553c/Biblioteca.jpg)
+}
+
+.alfa{
+    padding: 3;
+    background-color: rgba(255, 166, 0, 0.828);
+    border-style:solid;
+}
+
+.alfa2{
+
+    padding: 3;
+    background-color: rgba(255, 166, 0, 0.828);
+    border-style:solid;
+}
+
+.alfa3{
+
+    padding: 3;
+    background-color: rgba(255, 166, 0, 0.828);
+    border-style:solid;
+}
+
+.alfa4{
+    text-align: center;
+    padding: 2px;
+    border-style:solid;
+    border-color: black;
+    font-weight:bolder;
+    margin: 0cm 15.3cm;
+    
+}
+
+.boton{
+    font-weight: bolder;
+    text-align:center;
+    width:69px;
+}
+
+#boton1{
+    background-color: rgb(23, 190, 23);
+    position: absolute;
+    left: 43%;
+    margin-top: 1%;
+}
+
+#boton2{
+    background-color:rgb(255, 110, 0);
+    position: absolute;
+    left: 51.3%; 
+    margin-top: 1%;
+}
+
+.cartelito{
+    padding: 10px;
+    background-color: rgb(0, 140, 0);
+    border-style:solid;
+    color:white;
+    position: absolute;
+    left: 44.3%;
+    margin-top: -3.8%;
+}
+
+.cartelito2{
+    padding: 10px;
+    background-color: rgb(255, 20, 20);
+    border-style:solid;
+    color:black;
+    position: absolute;
+    left: 40.1%;
+    margin-top: -3.8%;
+    font-weight: bolder;
+}
