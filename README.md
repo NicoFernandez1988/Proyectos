@@ -1,3 +1,3 @@
-# Proyectos
-Una serie de proyectos creados por mi cuenta, desde algunos muy sencillos a otros mas complejos. 
-Utilizando Java y PHP como lenguaje de programacion. En conjunto con los frameworks Laravel, Spring y Bootstrap.
+# Projects
+A series of projects created by myself, from some very simple to others more complex.
+Using Java and PHP as programming language. In conjunction with the Laravel, Spring and Bootstrap frameworks.
