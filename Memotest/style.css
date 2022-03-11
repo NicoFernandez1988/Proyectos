@@ -1,0 +1,105 @@
+:root {
+    --w: calc(70vw / 6);
+    --h: calc(70vh / 4);
+}
+
+* {
+    transition: all 0.5s;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    -webkit-perspective: 1000;
+    background: radial-gradient(rgb(80, 80, 80), black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+div {
+    display: inline-block;
+}
+
+.area-tarjeta,
+.tarjeta,
+.cara {
+    cursor: pointer;
+    width: var(--w);
+    min-width: 100px;
+    height: var(--h);
+}
+
+.tarjeta {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: iniciar 5s;
+}
+
+
+.area-tarjeta:hover, .area-tarjeta:active{
+    
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+}
+
+.cara {
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: inset 0 0 0 5px rgb(235, 233, 233);
+    font-size: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trasera {
+    background: linear-gradient(rgb(255, 255, 1),rgb(134, 134, 1));
+    transform: rotateY(180deg);
+    box-shadow: inset 0 0 0 5px rgb(3, 3, 3);
+}
+
+.superior {
+    background: linear-gradient(lime,darkgreen);
+}
+
+.nuevo-juego {
+    cursor: pointer;
+    background: radial-gradient(rgb(141, 141, 141),rgb(31, 31, 31));
+    padding: 20px;
+    border-radius: 50px;
+    border: white 5px solid;
+    font-size: 140%;
+    font-weight: bolder;
+    
+    
+}
+
+.nuevo-juego:hover, .nuevo-juego:active{
+    
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+}
+
+#intentos{
+    font-size: 200%;
+    margin-top: 10px;
+    color: whitesmoke;
+}
+
+@keyframes iniciar {
+
+    20%,
+    90% {
+        transform: rotateY(180deg);
+    }
+
+    0%,
+    100% {
+        transform: rotateY(0deg);
+    }
+}
