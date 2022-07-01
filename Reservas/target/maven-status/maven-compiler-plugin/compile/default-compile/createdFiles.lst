@@ -1,0 +1,4 @@
+com\mycompany\reservas\Reservas.class
+com\mycompany\reservas\entidades\Persona.class
+com\mycompany\reservas\entidades\Sala.class
+com\mycompany\reservas\servicios\ServicioReserva.class
